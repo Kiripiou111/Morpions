@@ -1,3 +1,5 @@
+const tablo= document.getElementById("id_tableau");
+
 class Game {
     constructor() {
         this.plateau = [];
@@ -20,19 +22,44 @@ class Game {
         }
     }
 
-    verification(symbol) {
+    verification() {
         isWinner= false
+        // ligne semblable ?
         for(let i = 0; i < 3; i++) {
             for(let j = 0; j < 3 ; j++){
-                // parcour d'une ligne 
+                symbol = this.plateau[i][0];
                 if(this.plateau[i][j] != symbol){
                     break;
-                
+                }
+            isWinner = true;
             }
-            isWinner = true; 
+        }
+        // colonne semblable ?
+        for(let i = 0; i < 3; i++) {
+            for(let j = 0; j < 3 ; j++){
+                this.plateau[i][0];
+                if(this.plateau[j][i] != symbol){
+                    break;       
+                }
+            isWinner = true;
+            }
+        }
+        // diagonales semblables ?
+        if (this.plateau[0][0] == this.plateau[1][1] == this.plateau[2][2]) {
+            isWinner = true;
+        }
+        if (this.plateau[0][2] == this.plateau[1][1] == this.plateau[2][0]) {
+            isWinner = true;
         }
 
     }
-}   
+}  
 
 let jeu = new Game;
+tablo.addEventListener("click", e => {
+    caseTableau = e.target
+    console.log(caseTableau)
+
+
+
+});
