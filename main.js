@@ -54,11 +54,11 @@ class Game {
 
     }
 }  
-
+let pair = 0
 let jeu = new Game;
 tablo.addEventListener("click", e => {
     caseTableau = e.target
-    console.log(caseTableau)
+    console.log(e.px, e.py)
 
 
 
